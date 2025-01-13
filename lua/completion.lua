@@ -1,6 +1,10 @@
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
+vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#282828", fg = "#ebdbb2" })
+vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#282828", fg = "#ebdbb2" })
+vim.api.nvim_set_hl(0, "CmpPmenuSel", { bg = "#3c3836", fg = "#ebdbb2" })
+
 -- nvim-cmp setup
 cmp.setup({
   snippet = {
@@ -40,12 +44,13 @@ cmp.setup({
     { name = 'path' },
   }),
   window = {
-    completion = cmp.config.window.bordered(), -- Adds a border to the dropdown menu
+    completion = cmp.config.window.bordered({
+      border = { " ", " ", " ", " ", " ", " ", " ", " " },
+      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:CmpPmenuSel,Search:None'
+    }),
     documentation = cmp.config.window.bordered({
-      border = 'rounded',
-      max_width = 80,
-      max_height = 20,
-      winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder",
+      border = { " ", " ", " ", " ", " ", " ", " ", " " },
+      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:CmpPmenuSel,Search:None'
     }),
   },
   formatting = {
