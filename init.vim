@@ -13,6 +13,8 @@ Plug 'hrsh7th/cmp-path'                  " Required for nvim-cmp
 Plug 'hrsh7th/cmp-cmdline'               " Required for nvim-cmp
 Plug 'hrsh7th/nvim-cmp'                  " Completion engine
 Plug 'saadparwaiz1/cmp_luasnip'          " LuaSnip completion source for nvim-cmp
+Plug 'tpope/vim-fugitive'                " Git wrapper
+Plug 'tpope/vim-rhubarb'                 " Extension for vim-fugitive to enable :GBrowse
 call plug#end()
 
 " Expand tabs to spaces
