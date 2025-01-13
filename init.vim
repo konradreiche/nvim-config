@@ -31,8 +31,9 @@ else
   colorscheme gruvbox
 endif
 
-" Line numbers
+" Relative line numbers
 set nu cursorline
+set relativenumber
 hi CursorLineNr guifg=15
 
 " Map clipboard to default buffer
