@@ -42,10 +42,9 @@ lspconfig.gopls.setup {
       completeUnimported = true
     },
   },
- --   workspace = {
- --     didChangeWatchedFiles = {
- --       dynamicRegistration = true,
- --     },
- --   },
- -- },
+  workspace = {
+    didChangeWatchedFiles = {
+      dynamicRegistration = true,
+    },
+  },
 }

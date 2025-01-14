@@ -47,8 +47,9 @@ ls.add_snippets("all", {
     }),
 	}),
   s("func With", {
+    t("func With"), i(1, ""),
     t({
-      "func With() Option {",
+      "() Option {",
       "\treturn func(o *options) error {",
       "\t\treturn nil",
       "\t}",

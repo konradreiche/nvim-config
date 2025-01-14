@@ -15,6 +15,7 @@ Plug 'hrsh7th/nvim-cmp'                  " Completion engine
 Plug 'saadparwaiz1/cmp_luasnip'          " LuaSnip completion source for nvim-cmp
 Plug 'tpope/vim-fugitive'                " Git wrapper
 Plug 'tpope/vim-rhubarb'                 " Extension for vim-fugitive to enable :GBrowse
+Plug 'ahmedkhalf/project.nvim'           " Project management including ensuring Vim opens from project root
 call plug#end()
 
 " Expand tabs to spaces
@@ -53,8 +54,12 @@ command! Rename lua vim.lsp.buf.rename()
 
 command! Full lua vim.diagnostic.open_float()
 
+" Map leader to SPACE
 let mapleader = " "
 nnoremap <leader>lr :LspRestart<CR>
+
+" :GBrowse support for GitHub Enterprise
+let g:github_enterprise_urls = [$GITHUB_ENTERPRISE_URL]
 
 lua require('colorscheme')
 lua require('treesitter')
@@ -63,3 +68,4 @@ lua require('go')
 lua require('completion')
 lua require('snippets')
 lua require('diagnostic')
+lua require('project')
