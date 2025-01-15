@@ -16,6 +16,7 @@ Plug 'saadparwaiz1/cmp_luasnip'          " LuaSnip completion source for nvim-cm
 Plug 'tpope/vim-fugitive'                " Git wrapper
 Plug 'tpope/vim-rhubarb'                 " Extension for vim-fugitive to enable :GBrowse
 Plug 'ahmedkhalf/project.nvim'           " Project management including ensuring Vim opens from project root
+Plug 'nvim-lualine/lualine.nvim'         " Configurable statusline
 call plug#end()
 
 " Expand tabs to spaces
