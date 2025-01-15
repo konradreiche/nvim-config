@@ -3,4 +3,4 @@ function count_errors()
   return #diagnostics
 end
 
-vim.o.statusline = "%f %m %= %{v:lua.count_errors()} Errors"
+vim.o.statusline = "%{expand('%:.')} %m %= %{v:lua.count_errors()} Errors"
