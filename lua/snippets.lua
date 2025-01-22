@@ -30,6 +30,12 @@ ls.add_snippets("all", {
       "type options struct {",
       "}",
       "",
+      "// Option is a functional option for flexible and extensible configuration of",
+      "// ",
+    }),
+    i(1, ""),
+    t({
+      ", allowing modification of internal state or behavior during construction.",
       "type Option func(*options) error",
       "",
       "// WithOptions permits aggregating multiple options together, and is useful to",
@@ -56,7 +62,7 @@ ls.add_snippets("all", {
       "}",
     }),
   }),
-  s("opt :=", {
+  s("cfg :=", {
     t({
       "cfg := options{}",
       "if err := WithOptions(WithOptions(opts...))(&cfg); err != nil {",
