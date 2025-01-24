@@ -2,6 +2,8 @@
 
 This repository contains my personal Neovim configuration files.
 
+![Screenshot](./screenshot.png)
+
 ## Setup
 
 1. Clone this repository to your Neovim configuration directory:
@@ -13,3 +15,7 @@ This repository contains my personal Neovim configuration files.
    ```vim
    :PlugInstall
    ```
+
+## Vim Command Tips
+
+* After using `vim.lsp.buf.rename()`, run `:wa` to save all open files at once. Use `:ls` to check modified files before saving if needed.
