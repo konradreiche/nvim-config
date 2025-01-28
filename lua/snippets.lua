@@ -65,7 +65,7 @@ ls.add_snippets("all", {
   s("cfg :=", {
     t({
       "cfg := options{}",
-      "if err := WithOptions(WithOptions(opts...))(&cfg); err != nil {",
+      "if err := WithOptions(opts...)(&cfg); err != nil {",
       "\treturn nil, err",
       "}",
     }),

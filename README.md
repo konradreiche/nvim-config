@@ -1,4 +1,4 @@
-# Neovim Configuration 📜
+# ~/.config/nvim ✏️
 
 This repository contains my personal Neovim configuration files.
 
