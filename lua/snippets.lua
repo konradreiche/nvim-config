@@ -77,6 +77,27 @@ ls.add_snippets("all", {
       "}",
     }),
   }),
+  s("tests :=", {
+    t({
+      "tests := []struct {",
+      "\tname string",
+      "}{",
+      "\t{",
+      "",
+    }),
+    t("\t\tname: \""), i(1, ""), t("\""),
+    t({
+      ",",
+      "\t},",
+      "}",
+      "",
+      "for _, tt := range tests {",
+      "\tt.Run(tt.name, func(t *testing.T) {",
+      "\t\t",
+      "\t})",
+      "}",
+    }),
+  }),
 })
 
 
