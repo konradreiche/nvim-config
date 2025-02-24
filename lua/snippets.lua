@@ -70,6 +70,11 @@ ls.add_snippets("all", {
       "}",
     }),
   }),
+  s("if err", {
+    t({"if err != nil {", "\t"}),
+    i(1, ""),
+    t({"","}"}),
+  }),
   s("fatal", {
     t({
       "if err != nil {",

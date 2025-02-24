@@ -17,6 +17,11 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
+    ['<C-l>'] = cmp.mapping(function()
+      if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      end
+    end, { "i", "s" }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept current selection
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
