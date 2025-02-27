@@ -24,24 +24,40 @@ ls.setup({
   update_events = {"TextChanged", "TextChangedI"}
 })
 
+local function capitalize(args)
+    local input = args[1][1]
+    return input:sub(1, 1):upper() .. input:sub(2)
+end
+
 ls.add_snippets("all", {
-	s("type opt", {
-		t({
-      "type options struct {",
-      "}",
-      "",
-      "// Option is a functional option for flexible and extensible configuration of",
-      "// ",
-    }),
-    i(1, ""),
+	s("typeopt", {
+    t("type "), i(1, "options"), t({" struct {}", "", ""}),
+      t("// "), f(capitalize, {1}), t(" is a functional option for flexible and extensible configuration of "),
+      t({"", "// ["}),
+      i(2), 
+      t("], allowing modification of internal state or behavior during"),
+    t({"", "// construction."}),
+    t({"", ""}),
+    t("type "), f(capitalize, {1}), t(" func(*"), rep(1), t(") error"),
     t({
-      ", allowing modification of internal state or behavior during construction.",
-      "type Option func(*options) error",
       "",
-      "// WithOptions permits aggregating multiple options together, and is useful to",
+      "",
+      "// With ",
+    }),
+    f(capitalize, {1}), t(" permits aggregating multiple options together, and is useful to"),
+    t({
+      "",
       "// avoid having to append options when creating helper functions or wrappers.",
-      "func WithOptions(opts ...Option) Option {",
-      "\treturn func(o *options) error {",
+      "func With",
+    }),
+    f(capitalize, {1}), t("(opts ..."), f(capitalize, {1}), t(") "), f(capitalize, {1}), t(" {"),
+    t({
+      "",
+      "\treturn func(o *"
+    }),
+    rep(1), t(") error {"),
+    t({
+      "",
       "\t\tfor _, opt := range opts {",
       "\t\t\tif err := opt(o); err != nil {",
       "\t\t\t\treturn err",
