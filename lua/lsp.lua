@@ -3,6 +3,9 @@ lspconfig = require "lspconfig"
 util = require "lspconfig/util"
 
 local on_attach = function(client, bufnr)
+  -- Clear format program (gofmt) to ensure gq still breaks lines
+  vim.opt.formatprg = ""
+
   -- Key mappings for LSP functionality (optional)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -39,7 +42,7 @@ lspconfig.gopls.setup {
     gopls = {
       staticcheck = true,
       usePlaceholders = true,
-      completeUnimported = true
+      completeUnimported = true,
     },
   },
   workspace = {
