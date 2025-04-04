@@ -29,6 +29,16 @@ local function capitalize(args)
     return input:sub(1, 1):upper() .. input:sub(2)
 end
 
+local function singular(word)
+  return word:sub(1, -2)
+end
+
+local function compose(f1, f2)
+  return function(args)
+    return f1(f2(args))
+  end
+end
+
 ls.add_snippets("all", {
 	s("typeopt", {
     t("type "), i(1, "options"), t({" struct {}", "", ""}),
@@ -38,11 +48,11 @@ ls.add_snippets("all", {
       t("], allowing modification of internal state or behavior during"),
     t({"", "// construction."}),
     t({"", ""}),
-    t("type "), f(capitalize, {1}), t(" func(*"), rep(1), t(") error"),
+    t("type "), f(compose(singular, capitalize), {1}), t(" func(*"), rep(1), t(") error"),
     t({
       "",
       "",
-      "// With ",
+      "// With",
     }),
     f(capitalize, {1}), t(" permits aggregating multiple options together, and is useful to"),
     t({
