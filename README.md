@@ -4,6 +4,10 @@ This repository contains my personal Neovim configuration files.
 
 ![Screenshot](./screenshot.png)
 
+### Prerequisites
+
+This configuration uses [Nerd Fonts](https://www.nerdfonts.com/) to render icons in the [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) completion menu.
+
 ## Setup
 
 1. Clone this repository to your Neovim configuration directory:

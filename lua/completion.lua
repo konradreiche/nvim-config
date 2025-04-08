@@ -5,6 +5,35 @@ vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#282828", fg = "#ebdbb2" })
 vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#282828", fg = "#ebdbb2" })
 vim.api.nvim_set_hl(0, "CmpPmenuSel", { bg = "#3c3836", fg = "#ebdbb2" })
 
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+  Copilot = "",
+}
+
 -- nvim-cmp setup
 cmp.setup({
   snippet = {
@@ -62,8 +91,8 @@ cmp.setup({
     format = function(entry, vim_item)
       local item = entry.completion_item
 
-      -- Delete Kind as it is not very interesting
-      vim_item.kind = ''
+      -- Use a custom mapping to display icons instead of text
+      vim_item.kind = kind_icons[vim_item.kind] or vim_item.kind
 
       -- Add horizontal bar between signature and documentation if documentation exists
       if item.documentation and item.documentation.value ~= "" then
