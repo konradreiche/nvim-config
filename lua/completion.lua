@@ -72,10 +72,11 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- Add LuaSnip as a source
-    { name = 'buffer' },
-    { name = 'path' },
+    { name = 'luasnip', priority = 100 },
+    { name = 'nvim_lsp', priority = 50 },
+    { name = 'buffer', priority = 25 },
+    { name = 'path', priority = 10 },
+    { name = 'copilot', priority = 0 },
   }),
   window = {
     completion = cmp.config.window.bordered({
