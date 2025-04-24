@@ -23,3 +23,4 @@ This configuration uses [Nerd Fonts](https://www.nerdfonts.com/) to render icons
 ## Vim Command Tips
 
 * After using `vim.lsp.buf.rename()`, run `:wa` to save all open files at once. Use `:ls` to check modified files before saving if needed.
+* Use `W` over `w` to jump to the next words that are blank-separated, useful for jumping quickly to parameters, etc.

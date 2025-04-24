@@ -17,6 +17,9 @@ Plug 'tpope/vim-fugitive'                " Git wrapper
 Plug 'tpope/vim-rhubarb'                 " Extension for vim-fugitive to enable :GBrowse
 Plug 'ahmedkhalf/project.nvim'           " Project management including ensuring Vim opens from project root
 Plug 'nvim-lualine/lualine.nvim'         " Configurable statusline
+Plug 'zbirenbaum/copilot.lua'            " Improved replacement for copilot.vim
+Plug 'zbirenbaum/copilot-cmp'            " GitHub Copilot nvim-cmp integration
+Plug 'CopilotC-Nvim/CopilotChat.nvim'    " GitHub Copilot Chat capabilities
 call plug#end()
 
 " Expand tabs to spaces
@@ -70,3 +73,4 @@ lua require('completion')
 lua require('snippets')
 lua require('statusline')
 lua require('project')
+lua require('companion')

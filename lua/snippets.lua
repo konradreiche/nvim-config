@@ -54,7 +54,7 @@ ls.add_snippets("all", {
       "",
       "// With",
     }),
-    f(capitalize, {1}), t(" permits aggregating multiple options together, and is useful to"),
+    f(compose(singular, capitalize), {1}), t(" permits aggregating multiple options together, and is useful to"),
     t({
       "",
       "// avoid having to append options when creating helper functions or wrappers.",
