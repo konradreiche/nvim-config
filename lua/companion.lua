@@ -8,3 +8,5 @@ require("CopilotChat").setup {
     layout = 'float',
   }
 }
+
+vim.keymap.set("n", "<leader>c", ":CopilotChat<CR>", { desc = "Open Copilot Chat" })
