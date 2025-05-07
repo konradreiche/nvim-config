@@ -9,4 +9,4 @@ require("CopilotChat").setup {
   }
 }
 
-vim.keymap.set("n", "<leader>c", ":CopilotChat<CR>", { desc = "Open Copilot Chat" })
+vim.keymap.set({ "n", "v" }, "<leader>c", ":CopilotChat<CR>", { desc = "Open Copilot Chat" })

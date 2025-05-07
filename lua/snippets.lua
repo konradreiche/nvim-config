@@ -42,7 +42,7 @@ end
 ls.add_snippets("all", {
 	s("typeopt", {
     t("type "), i(1, "options"), t({" struct {}", "", ""}),
-      t("// "), f(capitalize, {1}), t(" is a functional option for flexible and extensible configuration of "),
+      t("// "), f(compose(singular, capitalize), {1}), t(" is a functional option for flexible and extensible configuration of "),
       t({"", "// ["}),
       i(2), 
       t("], allowing modification of internal state or behavior during"),
@@ -60,7 +60,7 @@ ls.add_snippets("all", {
       "// avoid having to append options when creating helper functions or wrappers.",
       "func With",
     }),
-    f(capitalize, {1}), t("(opts ..."), f(capitalize, {1}), t(") "), f(capitalize, {1}), t(" {"),
+    f(capitalize, {1}), t("(opts ..."), f(compose(singular, capitalize), {1}), t(") "), f(compose(singular, capitalize), {1}), t(" {"),
     t({
       "",
       "\treturn func(o *"
