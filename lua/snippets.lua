@@ -96,9 +96,14 @@ ls.add_snippets("all", {
       "}",
     }),
   }),
-  s("if err", {
+  s("iferr", {
     t({"if err != nil {", "\t"}),
-    i(1, ""),
+    t("return err"),
+    t({"","}"}),
+  }),
+  s("iferrr", {
+    t({"if err != nil {", "\t"}),
+    t("return nil, err"),
     t({"","}"}),
   }),
   s("fatal", {
@@ -131,4 +136,22 @@ ls.add_snippets("all", {
   }),
 })
 
+vim.keymap.set("n", "<leader>ie", function()
+  local ls = require("luasnip")
+  for _, snippet in ipairs(ls.get_snippets("all")) do
+    if snippet.trigger == "iferr" then
+      ls.snip_expand(snippet)
+      break
+    end
+  end
+end, { desc = "Insert Go error check snippet" })
 
+vim.keymap.set("n", "<leader>iee", function()
+  local ls = require("luasnip")
+  for _, snippet in ipairs(ls.get_snippets("all")) do
+    if snippet.trigger == "iferrr" then
+      ls.snip_expand(snippet)
+      break
+    end
+  end
+end, { desc = "Insert Go error check snippet with nil result" })

@@ -3,7 +3,7 @@ require('copilot').setup()
 require("copilot_cmp").setup()
 
 require("CopilotChat").setup {
-  model = 'gpt-4o',
+  model = 'gpt-4.1-mini',
   window = {
     layout = 'float',
   }
