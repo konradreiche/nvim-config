@@ -22,7 +22,7 @@ Plug 'hrsh7th/nvim-cmp'                  " Completion engine
 Plug 'saadparwaiz1/cmp_luasnip'          " LuaSnip completion source for nvim-cmp
 Plug 'tpope/vim-fugitive'                " Git wrapper
 Plug 'tpope/vim-rhubarb'                 " Extension for vim-fugitive to enable :GBrowse
-Plug 'ahmedkhalf/project.nvim'           " Project management including ensuring Vim opens from project root
+Plug 'DrKJeff16/project.nvim'            " Project management including ensuring Vim opens from project root
 Plug 'nvim-lualine/lualine.nvim'         " Configurable statusline
 Plug 'zbirenbaum/copilot.lua'            " Improved replacement for copilot.vim
 Plug 'zbirenbaum/copilot-cmp'            " GitHub Copilot nvim-cmp integration
