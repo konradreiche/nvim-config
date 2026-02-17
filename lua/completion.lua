@@ -76,7 +76,6 @@ cmp.setup({
     { name = 'nvim_lsp', priority = 50 },
     { name = 'buffer', priority = 25 },
     { name = 'path', priority = 10 },
-    { name = 'copilot', priority = 0 },
   }),
   window = {
     completion = cmp.config.window.bordered({
