@@ -80,9 +80,17 @@ ls.add_snippets("all", {
 	}),
   s("func With", {
     t("func With"), i(1, ""),
+    t("() "),
+    f(compose(singular, capitalize), {2}),
+    t(" {"),
     t({
-      "() Option {",
-      "\treturn func(o *options) error {",
+      "",
+      "\treturn func(o *",
+    }),
+    i(2, "options"),
+    t(") error {"),
+    t({
+      "",
       "\t\treturn nil",
       "\t}",
       "}",
