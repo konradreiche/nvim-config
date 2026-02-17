@@ -1,3 +1,4 @@
+local dark = "#000000"
 local light = "#ebdbb2"
 local red = "#fb4934"
 local green = "#b8bb26"
@@ -26,7 +27,9 @@ require("gruvbox").setup({
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
   contrast = "hard", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
+  palette_overrides = {
+    dark0_hard = dark
+  },
   overrides = {},
   dim_inactive = false,
   transparent_mode = false,
