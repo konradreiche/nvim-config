@@ -71,6 +71,9 @@ nnoremap <leader>lr :LspRestart<CR>
 " :GBrowse support for GitHub Enterprise
 let g:github_enterprise_urls = [$GITHUB_ENTERPRISE_URL]
 
+" Replace common characters
+command! SimplifyCharacters %s/[‘’]/'/ge | %s/[“”]/"/ge
+
 lua require('colorscheme')
 lua require('treesitter')
 lua require('lsp')
