@@ -43,6 +43,7 @@ lspconfig.gopls.setup {
       staticcheck = true,
       usePlaceholders = true,
       completeUnimported = true,
+      renameMovesSubpackages = true,
     },
   },
   workspace = {
