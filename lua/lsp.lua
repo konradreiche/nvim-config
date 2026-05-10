@@ -1,7 +1,3 @@
--- configure nvim-lspcofnig
-lspconfig = require "lspconfig"
-util = require "lspconfig/util"
-
 local on_attach = function(client, bufnr)
   -- Clear format program (gofmt) to ensure gq still breaks lines
   vim.opt.formatprg = ""
@@ -32,10 +28,15 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.gopls.setup {
+vim.lsp.enable('gopls')
+vim.lsp.config('gopls', {
   cmd = {"gopls", "serve"},
   filetypes = {"go", "gomod"},
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  root_markers = {
+    "go.work",
+    "go.mod",
+    ".git",
+  },
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -51,4 +52,4 @@ lspconfig.gopls.setup {
       dynamicRegistration = true,
     },
   },
-}
+})

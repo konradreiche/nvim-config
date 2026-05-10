@@ -1,6 +1,7 @@
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
+require('nvim-treesitter').setup {
+  install_dir = vim.fn.stdpath('data') .. '/site',
+}
+
+require('nvim-treesitter').install {
+  'go',
 }
